@@ -16,6 +16,7 @@ import (
 )
 
 func TestAccAWSIAMRole_basic(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 
@@ -37,6 +38,7 @@ func TestAccAWSIAMRole_basic(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_basicWithDescription(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 
@@ -74,6 +76,7 @@ func TestAccAWSIAMRole_basicWithDescription(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_namePrefix(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 
@@ -97,6 +100,7 @@ func TestAccAWSIAMRole_namePrefix(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_testNameChange(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 
@@ -123,6 +127,7 @@ func TestAccAWSIAMRole_testNameChange(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_badJSON(t *testing.T) {
+	t.Parallel()
 	rName := acctest.RandString(10)
 
 	resource.Test(t, resource.TestCase{
@@ -139,6 +144,7 @@ func TestAccAWSIAMRole_badJSON(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_disappears(t *testing.T) {
+	t.Parallel()
 	var role iam.GetRoleOutput
 
 	rName := acctest.RandomWithPrefix("tf-acc-test")
@@ -162,6 +168,7 @@ func TestAccAWSIAMRole_disappears(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_force_detach_policies(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 
@@ -182,6 +189,7 @@ func TestAccAWSIAMRole_force_detach_policies(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_MaxSessionDuration(t *testing.T) {
+	t.Parallel()
 	var conf iam.GetRoleOutput
 	rName := acctest.RandString(10)
 	resourceName := "aws_iam_role.test"
@@ -223,6 +231,7 @@ func TestAccAWSIAMRole_MaxSessionDuration(t *testing.T) {
 }
 
 func TestAccAWSIAMRole_PermissionsBoundary(t *testing.T) {
+	t.Parallel()
 	var role iam.GetRoleOutput
 
 	rName := acctest.RandString(10)

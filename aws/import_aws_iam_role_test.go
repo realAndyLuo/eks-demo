@@ -8,6 +8,7 @@ import (
 )
 
 func TestAccAWSIAMRole_importBasic(t *testing.T) {
+	t.Parallel()
 	resourceName := "aws_iam_role.role"
 	rName := acctest.RandString(10)
 
